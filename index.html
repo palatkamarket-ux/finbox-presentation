@@ -130,9 +130,13 @@
   .icon-list{list-style:none;display:flex;flex-direction:column;gap:12px}
   .icon-list li{display:flex;align-items:center;gap:12px;font-size:15.5px;font-weight:500;color:#3A3D4A}
   .icon-dot{
-    flex:none;width:34px;height:34px;border-radius:10px;background:#EDEFFC;
-    display:flex;align-items:center;justify-content:center;font-size:16px;
+    flex:none;width:34px;height:34px;border-radius:10px;background:#EDEFFC;color:var(--blue);
+    display:flex;align-items:center;justify-content:center;
   }
+  .icon-dot svg{width:17px;height:17px}
+  .val-emoji svg{width:20px;height:20px}
+  .c-ico svg{width:22px;height:22px}
+  details.law summary svg{width:18px;height:18px;flex:none}
 
   /* value cards (clients / company) */
   .val-card{position:relative;padding:30px 28px}
@@ -274,6 +278,55 @@
 </head>
 <body>
 
+<!-- ======= SVG ICON SPRITE ======= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="3.6"/><path d="M5 19.5c1.5-3.2 4-4.8 7-4.8s5.5 1.6 7 4.8"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.9v2.6a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 3.7 2 2 0 0 1 4.1 1.5h2.6a2 2 0 0 1 2 1.7c.13.96.37 1.9.7 2.8a2 2 0 0 1-.45 2.1L7.9 9.2a16 16 0 0 0 6 6l1.1-1.05a2 2 0 0 1 2.1-.45c.9.33 1.84.57 2.8.7a2 2 0 0 1 1.7 2z"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.6 0-3.1-.4-4.4-1.2L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"/>
+    </symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8M16 17H8"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19"/><path d="M12 2.5a14.5 14.5 0 0 1 3.8 9.5 14.5 14.5 0 0 1-3.8 9.5 14.5 14.5 0 0 1-3.8-9.5A14.5 14.5 0 0 1 12 2.5z"/>
+    </symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>
+    </symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-4.5"/><path d="M22 9v5"/>
+    </symbol>
+    <symbol id="i-headset" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+    </symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3l7 3v5c0 4.4-2.9 8-7 9.5C7.9 19 5 15.4 5 11V6z"/><path d="M9 11.5l2 2 4-4"/>
+    </symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 21h18"/><path d="M7 21v-8M12 21V6M17 21V10"/>
+    </symbol>
+    <symbol id="i-scales" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 4v16M8 20h8M12 6L5 8m7-2l7 2"/><path d="M5 8l-2.5 5.5a3.2 3.2 0 0 0 5 0L5 8zM19 8l-2.5 5.5a3.2 3.2 0 0 0 5 0L19 8z"/>
+    </symbol>
+    <symbol id="i-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="5" y="3" width="14" height="18" rx="1.5"/><path d="M9 7.5h2m2 0h2M9 11.5h2m2 0h2M9 15.5h2m2 0h2"/><path d="M10.5 21v-2.5h3V21"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24">
+      <path d="M12 2.5l2.95 5.95 6.55.95-4.75 4.6 1.12 6.5L12 17.45 6.13 20.5l1.12-6.5L2.5 9.4l6.55-.95z" fill="#F7B500"/>
+    </symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24">
+      <path d="M12 21.5c-3.7 0-6.6-2.8-6.6-6.3 0-2.6 1.5-4.5 3-6.1 1.4-1.5 2.6-3 2.9-5.8 2.7 1.6 4.3 4.1 3.7 7.1.95-.4 1.65-1.1 2.05-2.15 1.05 1.55 1.55 3.25 1.55 4.95 0 3.5-2.9 6.3-6.6 6.3z" fill="#FF7A1A"/>
+      <path d="M12 21.5c-1.85 0-3.3-1.4-3.3-3.15 0-1.3.75-2.25 1.5-3.05.7-.75 1.3-1.5 1.45-2.9 1.35.8 2.15 2.05 1.85 3.55.5-.2.85-.55 1.05-1.1.5.8.75 1.65.75 2.5 0 1.75-1.45 3.15-3.3 3.15z" fill="#FFC24D"/>
+    </symbol>
+  </defs>
+</svg>
+
 <!-- ======= STICKY BAR ======= -->
 <div class="topbar">
   <div class="topbar-in">
@@ -351,11 +404,11 @@
         <div class="panel-body">
           <p class="lead-line">Варианты оформления кредитов в платформе:</p>
           <ul class="icon-list">
-            <li><span class="icon-dot">👨‍💼</span>Силами менеджера вашей компании</li>
-            <li><span class="icon-dot">📞</span>Силами call-центра Finbox</li>
-            <li><span class="icon-dot">💬</span>Технология WhatsApp</li>
-            <li><span class="icon-dot">📝</span>Короткая анкета</li>
-            <li><span class="icon-dot">🌐</span>Интернет-технология</li>
+            <li><span class="icon-dot"><svg><use href="#i-user"/></svg></span>Силами менеджера вашей компании</li>
+            <li><span class="icon-dot"><svg><use href="#i-phone"/></svg></span>Силами call-центра Finbox</li>
+            <li><span class="icon-dot"><svg><use href="#i-chat"/></svg></span>Технология WhatsApp</li>
+            <li><span class="icon-dot"><svg><use href="#i-doc"/></svg></span>Короткая анкета</li>
+            <li><span class="icon-dot"><svg><use href="#i-globe"/></svg></span>Интернет-технология</li>
           </ul>
         </div>
       </div>
@@ -363,12 +416,12 @@
         <div class="panel-head">Гарантируем</div>
         <div class="panel-body">
           <ul class="icon-list">
-            <li><span class="icon-dot">📈</span>Повышение выдаваемости</li>
-            <li><span class="icon-dot">🎓</span>Обучение персонала</li>
-            <li><span class="icon-dot">🕑</span>Круглосуточная поддержка</li>
-            <li><span class="icon-dot">🤝</span>Персональный менеджер</li>
-            <li><span class="icon-dot">🛡️</span>Многоуровневая защита</li>
-            <li><span class="icon-dot">📊</span>Доступ к полной аналитике</li>
+            <li><span class="icon-dot"><svg><use href="#i-trend"/></svg></span>Повышение выдаваемости</li>
+            <li><span class="icon-dot"><svg><use href="#i-cap"/></svg></span>Обучение персонала</li>
+            <li><span class="icon-dot"><svg><use href="#i-headset"/></svg></span>Круглосуточная поддержка</li>
+            <li><span class="icon-dot"><svg><use href="#i-user"/></svg></span>Персональный менеджер</li>
+            <li><span class="icon-dot"><svg><use href="#i-shield"/></svg></span>Многоуровневая защита</li>
+            <li><span class="icon-dot"><svg><use href="#i-chart"/></svg></span>Доступ к полной аналитике</li>
           </ul>
         </div>
       </div>
@@ -381,12 +434,12 @@
   <div class="container">
     <h2 class="sec-title reveal">Для ваших клиентов это:</h2>
     <div class="grid g3">
-      <div class="card val-card reveal"><span class="val-emoji">⭐</span><div class="val-big">До 80%</div><div class="val-lbl">одобрения кредита</div></div>
-      <div class="card val-card reveal"><span class="val-emoji">⭐</span><div class="val-big">1</div><div class="val-lbl">документ</div></div>
-      <div class="card val-card reveal"><span class="val-emoji">⭐</span><div class="val-big">0 ₽</div><div class="val-lbl">первый взнос</div></div>
-      <div class="card val-card reveal"><span class="val-emoji">⭐</span><div class="val-txt">Возможность оформления<br>не выходя из дома</div></div>
-      <div class="card val-card reveal"><span class="val-emoji">⭐</span><div class="val-txt">Бесплатное погашение<br>в любой точке РФ</div></div>
-      <div class="card val-card reveal"><span class="val-emoji">⭐</span><div class="val-txt">Сумма<br>до 1 000 000 ₽</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-star"/></svg></span><div class="val-big">До 80%</div><div class="val-lbl">одобрения кредита</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-star"/></svg></span><div class="val-big">1</div><div class="val-lbl">документ</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-star"/></svg></span><div class="val-big">0 ₽</div><div class="val-lbl">первый взнос</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-star"/></svg></span><div class="val-txt">Возможность оформления<br>не выходя из дома</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-star"/></svg></span><div class="val-txt">Бесплатное погашение<br>в любой точке РФ</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-star"/></svg></span><div class="val-txt">Сумма<br>до 1 000 000 ₽</div></div>
     </div>
   </div>
 </section>
@@ -396,13 +449,13 @@
   <div class="container">
     <h2 class="sec-title reveal">Для компании это:</h2>
     <div class="grid g3">
-      <div class="card val-card reveal"><span class="val-emoji">🔥</span><div class="val-big">+200%</div><div class="val-lbl">увеличение конверсии входящего потока покупателей</div></div>
-      <div class="card val-card reveal"><span class="val-emoji">🔥</span><div class="val-big">100%</div><div class="val-lbl">гарантия получения тела кредита на р/с компании</div></div>
-      <div class="card val-card reveal"><span class="val-emoji">🔥</span><div class="val-txt">Увеличение среднего чека</div></div>
-      <div class="card val-card reveal"><span class="val-emoji">🔥</span><div class="val-txt">Персональный менеджер</div></div>
-      <div class="card val-card reveal"><span class="val-emoji">🔥</span><div class="val-txt">Любые банковские продукты</div><div class="val-note">согласно экономике партнёра</div></div>
-      <div class="card val-card reveal"><span class="val-emoji">🔥</span><div class="val-txt">Интеграция на любой интернет-ресурс</div><div class="val-note">сайт, соцсети</div></div>
-      <div class="card val-card reveal" style="grid-column:1/-1"><span class="val-emoji">🔥</span><div class="val-txt">Интеграция Finbox с любой версией 1С</div><div class="val-note">для повышения доходности бизнеса и полного контроля над продажами в кредит со стороны всех отделов</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-flame"/></svg></span><div class="val-big">+200%</div><div class="val-lbl">увеличение конверсии входящего потока покупателей</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-flame"/></svg></span><div class="val-big">100%</div><div class="val-lbl">гарантия получения тела кредита на р/с компании</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-flame"/></svg></span><div class="val-txt">Увеличение среднего чека</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-flame"/></svg></span><div class="val-txt">Персональный менеджер</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-flame"/></svg></span><div class="val-txt">Любые банковские продукты</div><div class="val-note">согласно экономике партнёра</div></div>
+      <div class="card val-card reveal"><span class="val-emoji"><svg><use href="#i-flame"/></svg></span><div class="val-txt">Интеграция на любой интернет-ресурс</div><div class="val-note">сайт, соцсети</div></div>
+      <div class="card val-card reveal" style="grid-column:1/-1"><span class="val-emoji"><svg><use href="#i-flame"/></svg></span><div class="val-txt">Интеграция Finbox с любой версией 1С</div><div class="val-note">для повышения доходности бизнеса и полного контроля над продажами в кредит со стороны всех отделов</div></div>
     </div>
 
     <div class="cta-band reveal" style="margin-top:44px">
@@ -429,7 +482,7 @@
     </div>
 
     <details class="law reveal">
-      <summary>⚖️ Правовая основа — статья 860.1 ГК РФ</summary>
+      <summary><svg><use href="#i-scales"/></svg> Правовая основа — статья 860.1 ГК РФ</summary>
       <div class="law-body">
         <p>• Статья 860.1 ГК РФ предусматривает, что номинальный счёт может открываться Банком Владельцу счёта для совершения операций с денежными средствами, права на которые принадлежат другому лицу-Бенефициару.</p>
         <p>• В контексте POS-кредитования владельцем счёта является финансовая платформа, бенефициарами — торговые организации.</p>
@@ -574,22 +627,22 @@
     <h2 class="sec-title reveal">Контактная информация</h2>
     <div class="contact-grid">
       <div class="contact-card reveal">
-        <div class="c-ico">🌐</div>
+        <div class="c-ico"><svg><use href="#i-globe"/></svg></div>
         <div class="c-lbl">Сайт</div>
         <div class="c-val"><a href="https://www.fbox.me" target="_blank" rel="noopener">www.fbox.me</a></div>
       </div>
       <div class="contact-card reveal">
-        <div class="c-ico">📞</div>
+        <div class="c-ico"><svg><use href="#i-phone"/></svg></div>
         <div class="c-lbl">Горячая линия</div>
         <div class="c-val"><a href="tel:88002002377">8-800-200-23-77</a></div>
       </div>
       <div class="contact-card reveal">
-        <div class="c-ico">🏢</div>
+        <div class="c-ico"><svg><use href="#i-building"/></svg></div>
         <div class="c-lbl">Адрес</div>
         <div class="c-val" style="font-size:15px">Москва, вн.тер.г. муниципальный округ Пресненский, 1-й Земельный пер., д. 1</div>
       </div>
       <div class="contact-card reveal">
-        <div class="c-ico">👤</div>
+        <div class="c-ico"><svg><use href="#i-user"/></svg></div>
         <div class="c-lbl">Ваш менеджер</div>
         <div class="c-val" id="mgrName">—</div>
         <div style="color:var(--gray);font-weight:600;font-size:14px" id="mgrRole">—</div>
@@ -739,7 +792,7 @@ const CONFIG = {
     ev.preventDefault();
 
     // honeypot: боту показываем «успех», ничего не отправляя
-    if (form.website.value.trim() !== '') { setStatus('Заявка отправлена ✅','ok'); return; }
+    if (form.website.value.trim() !== '') { setStatus('Заявка отправлена ✓','ok'); return; }
 
     if (Date.now() < cooldownUntil) {
       setStatus('Заявка уже отправлена. Повторить можно через полминуты.','bad');
@@ -786,9 +839,9 @@ const CONFIG = {
       cooldownUntil = Date.now() + 30000;
       form.reset();
       document.getElementById('pickedInfo').style.display = 'none';
-      setStatus('Заявка отправлена ✅ Менеджер свяжется с вами в ближайшее время.','ok');
+      setStatus('Заявка отправлена ✓ Менеджер свяжется с вами в ближайшее время.','ok');
     } catch (err) {
-      setStatus('Не удалось отправить заявку 😔 Позвоните нам: <a href="tel:+79526268225">+7 952 626-82-25</a>','bad');
+      setStatus('Не удалось отправить заявку. Позвоните нам: <a href="tel:+79526268225">+7 952 626-82-25</a>','bad');
     } finally {
       btn.disabled = false;
     }
