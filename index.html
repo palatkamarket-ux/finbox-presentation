@@ -257,12 +257,17 @@
 <div class="topbar">
   <div class="topbar-in">
     <a class="logo" href="#top" aria-label="Finbox">
-      <svg width="34" height="34" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <rect x="2" y="2" width="44" height="44" rx="12" fill="#4152E4"/>
-        <path d="M24 10 L37 17 V31 L24 38 L11 31 V17 Z" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
-        <path d="M11 17 L24 24 L37 17 M24 24 V38" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+      <svg width="152" height="34" viewBox="0 0 512 115" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M183.81 34.7991V23.4373H142.719C140.92 23.4373 139.499 24.0054 138.174 25.3309L132.493 31.0118C131.167 32.3374 130.599 33.7576 130.599 35.5566V87.2529H143.097V61.4994H177.183V50.1376H143.097V34.7991H183.81Z" fill="black"/>
+        <path d="M194.676 87.2529H207.174V23.4373H194.676V87.2529Z" fill="black"/>
+        <path d="M221.398 87.2529H233.99V34.7991H240.334L257.093 87.2529H284.929L285.024 23.4373H272.431L272.526 75.891H266.182L249.613 23.4373H221.587L221.398 87.2529Z" fill="black"/>
+        <path d="M299.251 87.2529H347.16C348.959 87.2529 350.38 86.6848 351.705 85.3592L357.386 79.6783C358.712 78.3528 359.28 76.9325 359.28 75.1336V61.1207C359.28 59.4164 358.901 57.7121 357.291 56.86L352.084 54.3036V53.3567L357.291 50.9897C358.901 50.2322 359.28 48.3386 359.28 46.729V35.5566C359.28 33.7576 358.712 32.3374 357.386 31.0118L351.705 25.3309C350.38 24.0054 348.959 23.4373 347.16 23.4373H299.251V87.2529ZM311.749 48.4333V34.7991H346.782V48.4333H311.749ZM311.749 75.891V59.7951H346.782V75.891H311.749Z" fill="#4A65EA"/>
+        <path d="M384.683 87.2529H424.26C426.058 87.2529 427.479 86.6848 428.804 85.3592L434.485 79.6783C435.811 78.3528 436.379 76.9325 436.379 75.1336V35.5566C436.379 33.7576 435.811 32.3374 434.485 31.0118L428.804 25.3309C427.479 24.0054 426.058 23.4373 424.26 23.4373H384.683C382.884 23.4373 381.463 24.0054 380.138 25.3309L374.457 31.0118C373.131 32.3374 372.563 33.8523 372.563 35.5566V75.1336C372.563 76.9325 373.131 78.3528 374.457 79.6783L380.138 85.3592C381.463 86.6848 382.978 87.2529 384.683 87.2529ZM385.061 75.891V34.7991H423.881V75.891H385.061Z" fill="#4A65EA"/>
+        <path d="M444.965 87.2529H458.599L471.571 60.6472H485.489L498.461 87.2529H512L495.241 53.9248L510.296 23.4373H496.662L484.637 49.2854H472.328L460.304 23.4373H446.67L461.724 53.9248L444.965 87.2529Z" fill="#4A65EA"/>
+        <path d="M0 34.5006V78.2395L9.51965 91.6185L40.9087 105.255L51.7148 98.0507V51.2243L43.9962 38.1027L9.51965 23.4373L0 34.5006Z" fill="#3954DE"/>
+        <path d="M108.318 34.5006V78.2395L98.7985 91.6185L67.4094 105.255L56.6033 98.0507V51.2243L64.3219 38.1027L98.7985 23.4373L108.318 34.5006Z" fill="#4A65EA"/>
+        <ellipse cx="53.7731" cy="19.5779" rx="32.161" ry="11.5779" fill="#627AEF"/>
       </svg>
-      <span class="logo-text"><b>FIN<span>BOX</span></b><small>финансовая платформа</small></span>
     </a>
     <a class="btn btn-sm" href="#lead">Оставить заявку</a>
   </div>
@@ -570,7 +575,7 @@
 </section>
 
 <footer>
-  <b>FINBOX</b> · финансовая платформа · 2025<br>
+  <b>FINBOX</b> · 2025<br>
   Наберём обороты вместе
 </footer>
 
@@ -579,13 +584,14 @@
    НАСТРОЙКИ — заполните перед рассылкой
    ========================================================== */
 const CONFIG = {
-  TG_BOT_TOKEN: 'ВСТАВЬТЕ_ТОКЕН_БОТА',   // токен от @BotFather, вида 123456789:AA...
-  TG_CHAT_ID:   'ВСТАВЬТЕ_CHAT_ID',      // id чата/группы, куда слать заявки
+  // Заявки идут через прокси Cloudflare Worker (tg-proxy/) —
+  // токен бота хранится секретом на сервере и в этом файле отсутствует.
+  LEAD_ENDPOINT: 'https://finbox-lead-proxy.palatkamarket.workers.dev',
   MANAGER: {
-    name:  'Имя Фамилия',
-    role:  'Территориальный директор',
-    phone: '+7 (XXX) XXX-XX-XX',
-    email: 'e-mail@fbox.me'
+    name:  'Руслан Фурман',
+    role:  'Территориальный менеджер',
+    phone: '+7 952 626-82-25',
+    email: 'r.furman@fbox.me'
   }
 };
 /* ========================================================== */
@@ -619,8 +625,6 @@ const CONFIG = {
   const btn = document.getElementById('submitBtn');
   const status = document.getElementById('formStatus');
   let cooldownUntil = 0;
-
-  const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 
   function setStatus(text, cls){
     status.className = cls || '';
@@ -660,34 +664,23 @@ const CONFIG = {
       return;
     }
 
-    const now = new Date();
-    const stamp = now.toLocaleDateString('ru-RU') + ' ' + now.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});
-    const text =
-      '🔔 <b>Новая заявка на подключение Finbox</b>\n\n' +
-      '🏢 <b>Компания:</b> ' + esc(company) + '\n' +
-      '👤 <b>Контакт:</b> ' + esc(name) + '\n' +
-      '📞 <b>Телефон:</b> ' + esc(phone) + '\n' +
-      (city ? '📍 <b>Город:</b> ' + esc(city) + '\n' : '') +
-      (comment ? '💬 <b>Комментарий:</b> ' + esc(comment) + '\n' : '') +
-      '\n🕒 ' + stamp;
-
     btn.disabled = true;
     setStatus('Отправляем…','');
 
     try {
-      const resp = await fetch('https://api.telegram.org/bot' + CONFIG.TG_BOT_TOKEN + '/sendMessage', {
+      const resp = await fetch(CONFIG.LEAD_ENDPOINT, {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({ chat_id: CONFIG.TG_CHAT_ID, text: text, parse_mode: 'HTML' })
+        body: JSON.stringify({ company, name, phone, city, comment })
       });
       const data = await resp.json();
-      if (!data.ok) throw new Error(data.description || 'API error');
+      if (!data.ok) throw new Error('proxy error');
       cooldownUntil = Date.now() + 30000;
       form.reset();
       document.getElementById('fAgree').checked = true;
       setStatus('Заявка отправлена ✅ Менеджер свяжется с вами в ближайшее время.','ok');
     } catch (err) {
-      setStatus('Не удалось отправить заявку 😔 Позвоните нам: <a href="tel:88002002377">8-800-200-23-77</a>','bad');
+      setStatus('Не удалось отправить заявку 😔 Позвоните нам: <a href="tel:+79526268225">+7 952 626-82-25</a>','bad');
     } finally {
       btn.disabled = false;
     }
