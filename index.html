@@ -688,6 +688,15 @@ const CONFIG = {
 };
 /* ========================================================== */
 
+// Трекинг открытия из письма: персональная ссылка вида ...?c=<id>.
+// Маячок фиксирует ЖИВОЙ просмотр (исполняется только в браузере) — прокси пишет факт в базу и шлёт в Telegram.
+(function(){
+  try {
+    const c = new URLSearchParams(location.search).get('c');
+    if (c) new Image().src = CONFIG.LEAD_ENDPOINT + '/open?c=' + encodeURIComponent(c) + '&t=' + Date.now();
+  } catch(e){}
+})();
+
 // Контакты менеджера
 (function(){
   const m = CONFIG.MANAGER;
